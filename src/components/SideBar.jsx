@@ -1,5 +1,4 @@
 import { Heart, Home } from 'lucide-react'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const SideBar = () => {
@@ -44,7 +43,9 @@ const MobileSidebar = () => {
       <Link to={"/"}>
       <Home size={"24"} className='cursor-pointer'/>
       </Link>
+      <Link to={"/favorites"}>
       <Heart size={"24"} className='cursor-pointer'/>
+      </Link>
     </div>
   )
 }
