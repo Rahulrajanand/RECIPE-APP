@@ -1,3 +1,5 @@
+import RecipeCard from '../components/RecipeCard'
+
 const FavoritesPage = () => {
   const fav = false;
 
@@ -8,11 +10,18 @@ const FavoritesPage = () => {
 
         {!fav && (
           <div className="h-[80vh] flex flex-col items-center gap-4">
-                <img src="/404.svg" className="h-3/4" alt="404 svg" />
+            <img src="/404.svg" className="h-3/4" alt="404 svg" />
           </div>
         )}
 
-        
+        {
+          fav && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid:-cols-3 gap-4">
+              <RecipeCard />
+            </div>
+          )}
+
+
       </div>
     </div>
   )
