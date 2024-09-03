@@ -3,7 +3,7 @@ import RecipeCard from "../components/RecipeCard"
 import { useEffect, useState } from "react"
 
 const APP_ID = "3298bbb0"
-const APP_KEY = "df6a6b2761683fae180f1241d088ece"
+const APP_KEY = "ddf6a6b2761683fae180f1241d088ece"
 
 const HomePage = () => {
 
@@ -51,7 +51,7 @@ const HomePage = () => {
 
       <div className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-      {!loading && recipes.map(({recipe},index) => (
+      {!loading && recipes?.map(({recipe},index) => (
         <RecipeCard key={index} recipe={recipe}/>
       ))}
 
