@@ -3,8 +3,8 @@ import RecipeCard from "../components/RecipeCard"
 import { useEffect, useState } from "react"
 import { getRandomColor } from "../lib/utils"
 
-const APP_ID = "3298bbb0"
-const APP_KEY = "ddf6a6b2761683fae180f1241d088ece"
+const APP_ID = import.meta.env.VITE_APP_ID;
+const APP_KEY = import.meta.env.VITE_APP_KEY;
 
 const HomePage = () => {
 
@@ -31,9 +31,14 @@ const HomePage = () => {
     fetchRecipes("chicken")
   }, [])
 
+  const handleSearchRecipe = (e) => {
+    e.preventDefault();
+    fetchRecipes(e.target[0].value);
+  }
+
   return <div className="bg-[#faf9fb] p-10 flex-1">
     <div className="max-w-screen-lg mx-auto">
-      <form>
+      <form onSubmit={handleSearchRecipe}>
         <label className="input shadow-md flex items-center gap-2">
           <Search size={"24"} />
           <input type="text"
